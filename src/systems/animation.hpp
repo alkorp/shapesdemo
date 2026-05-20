@@ -3,7 +3,6 @@
 #include "../common.hpp"
 #include "../ecs.hpp"
 
-
 class AnimationSystem {
 public:
     static void animateEntity(Registry& registry, Entity entity);

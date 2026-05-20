@@ -2,7 +2,6 @@
 
 #include "../systems/render.hpp"
 
-
 Entity Rectangle::create(Registry& registry, int width, int height) {
     auto entity = registry.create();
     registry.addComponent<Transform>(entity);

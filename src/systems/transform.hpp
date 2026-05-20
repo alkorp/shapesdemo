@@ -3,7 +3,6 @@
 #include "../common.hpp"
 #include "../ecs.hpp"
 
-
 class TransformSystem {
 public:
     static void setPosition(Registry& registry, Entity entity, Point position) {

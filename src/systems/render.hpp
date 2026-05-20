@@ -4,17 +4,16 @@
 
 #include "../ecs.hpp"
 
-
 struct RenderData {
     sf::VertexArray vertices;
 };
 
 class RenderSystem {
 public:
-    explicit RenderSystem(sf::RenderWindow& window): window_{window} {};
+    explicit RenderSystem(sf::RenderWindow& window) : window_{window} {};
 
     void draw_all(Registry& registry) {
-        for(auto&& [entity, data]: registry.view<RenderData>()) {
+        for (auto&& [entity, data] : registry.view<RenderData>()) {
             auto transform = registry.getComponent<Transform>(entity);
             sf::RenderStates rs;
             if (transform) {
@@ -23,7 +22,7 @@ public:
             window_.draw(data.vertices, rs);
         }
     }
+
 private:
     sf::RenderWindow& window_;
-
 };
